@@ -1,0 +1,14 @@
+services:
+  jupyter:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mtech-jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - ../work:/home/jovyan/work
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - JUPYTER_TOKEN=your_token
+      - JUPYTER_PASSWORD=your_password
